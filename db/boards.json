@@ -1,0 +1,1 @@
+{"1": {"name": "first", "description": "", "team_id": "123", "creation_time": "2312", "status": "CLOSED", "tasks": ["1", "2"], "end_time": "2025-02-22T10:10:09.554517"}, "2": {"name": "22Board", "description": "today's board", "team_id": "123", "creation_time": "23423423", "status": "OPEN", "tasks": ["8b08cac4-618b-4791-9791-80d8e61c30ea"]}}
