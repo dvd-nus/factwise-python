@@ -41,7 +41,10 @@ All data is persisted in the `db/` directory as JSON files. Includes
 ## Setup Instructions  
 1. Clone the repository or extract the zip file.  
 2. Currently, there no extra python libraries are needed to be installed. Skip pip install from requirements.txt
-3. To use the APIs, you can use run the scripts named "run_".
+3. To use the APIs, you can use run the scripts starting with the name "run_". <br/>
+- User APIs: run_user_manager.py
+- Team APIs: run_team_manager.py
+- Project Board APIs: run_project_board.py <br/>
 Otherwise, import the relevant classes from their respective modules, instantiate them, and call the required methods with the appropriate JSON strings as input.
 
 ---
@@ -54,8 +57,9 @@ Otherwise, import the relevant classes from their respective modules, instantiat
 - Graceful error messages are returned for scenarios like missing IDs, duplicate names, or invalid operations.  
 - User should not be allowed to remove the admin of a team
 - Changing the team admin to someone who is not present in the team adds them to the team member list. It does not remove the previous admin from the member list
-- The APIs will run on a single server instance, and the UserManager, TeamManager, and ProjectBoardManager will not be instantiated and used simultaneously. File storage access is limited to a single process at a time, ensuring that data is only loaded once when initializing the relevant objects. This simplifies reading data from file storage by avoiding concurrent access issues.
+- The APIs will run on a single server instance. File storage access is limited to a single process at a time, ensuring that data is only loaded once when initializing the relevant objects. This simplifies reading data from file storage by avoiding concurrent access issues.
 - The board export API always stores the exported data in the file named board_<boardID>.txt. If the board is exported multiple times, it will be overwritten each time.
+- The total number of members on a team is restricted to 50
 
 ---
 
